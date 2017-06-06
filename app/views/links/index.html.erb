@@ -8,10 +8,10 @@
       <th>Count</th>
     </thead>
     <tbody>
-      <% @links.each do |link| %>
+      <% @links.each.with_index do |link, index| %>
         <tr>
           <td>
-            <%= link.url %>
+            <%= index + 1 %>: <%= link.url %>
           </td>
           <td><%= link.count %></td>
         </tr>

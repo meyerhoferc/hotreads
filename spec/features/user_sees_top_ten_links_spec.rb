@@ -4,7 +4,7 @@ describe 'an authenticated user visits /' do
   it 'sees the top 10 most marked-as-read links' do
     Link.create(url: 'http://reddit.com', count: 15)
     Link.create(url: 'http://twitter.com', count: 14)
-    Link.create(url: 'http://mail.ggogle.com', count: 13)
+    Link.create(url: 'http://mail.google.com', count: 13)
     Link.create(url: 'http://github.com', count: 12)
     Link.create(url: 'http://turing.io', count: 11)
     Link.create(url: 'http://google.com', count: 10)
