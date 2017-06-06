@@ -1,24 +1,16 @@
-# README
+# Hotreads
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## About
 
-Things you may want to cover:
+[Hotreads](https://desolate-crag-20501.herokuapp.com/) is a place that shows the most popular places on the Internet. This is a companion app to [URLockBox](https://warm-plains-20041.herokuapp.com/), an application where users can manage links they want to save. Hotreads is a Rails applilcation and API that sends information to URLockBox about the current top 10 links.
 
-* Ruby version
+#### Setup
 
-* System dependencies
+1. Clone this repo.
+2. `bundle install`
+2. `rake db:create db:migrate`
+3. To run locally: `rails s` and navigate to `127.0.0.1:3000`
 
-* Configuration
+#### Running the Tests
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`rspec`
