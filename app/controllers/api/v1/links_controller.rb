@@ -6,6 +6,11 @@ class Api::V1::LinksController < ApplicationController
     render json: @links
   end
 
+  def show
+    @link = Link.top_link
+    render json: @link
+  end
+
   def create
     @link = Link.find_or_initialize_by(link_params)
     if @link.persisted?

@@ -4,4 +4,8 @@ class Link < ApplicationRecord
   def self.top_ten
     Link.where('updated_at >= ?', 1.day.ago).order('count desc').limit(10)
   end
+
+  def self.top_link
+    Link.where('updated_at >= ?', 1.day.ago).order('count desc').limit(1)
+  end
 end
