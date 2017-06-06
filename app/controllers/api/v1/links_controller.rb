@@ -1,4 +1,10 @@
 class Api::V1::LinksController < ApplicationController
+
+  def index
+    @links = Link.top_ten
+    render json: @links
+  end
+
   def create
     @link = Link.find_or_initialize_by(link_params)
     if @link.persisted?
@@ -9,7 +15,7 @@ class Api::V1::LinksController < ApplicationController
       @link.count = 1
       @link.save
       render json: @link
-    else 
+    else
       render status: 404
     end
   end
