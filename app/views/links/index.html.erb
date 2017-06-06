@@ -1,0 +1,21 @@
+<h1>Welcome to Hot Reads</h1>
+
+<div class="links">
+  <h2>Top 10 Links</h2>
+  <table>
+    <thead>
+      <th>URL</th>
+      <th>Count</th>
+    </thead>
+    <tbody>
+      <% @links.each.with_index do |link, index| %>
+        <tr>
+          <td>
+            <%= index + 1 %>: <%= link.url %>
+          </td>
+          <td><%= link.count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
