@@ -26,4 +26,23 @@ describe Link, type: :model do
       expect(top_ten_links[-1].count).to eq(2)
     end
   end
+
+  describe '#top_link' do
+    it 'returns the top link ordered by count' do
+      described_class.create!(url: 'http://reddit.com', count: 15)
+      described_class.create!(url: 'http://twitter.com', count: 14)
+      described_class.create!(url: 'http://mail.ggogle.com', count: 13)
+      described_class.create!(url: 'http://github.com', count: 12)
+      described_class.create!(url: 'http://turing.io', count: 11)
+      described_class.create!(url: 'http://google.com', count: 10)
+      described_class.create!(url: 'http://heroku.com', count: 9)
+      described_class.create!(url: 'http://travisci.com', count: 8)
+      described_class.create!(url: 'http://digitalocean.com', count: 4)
+      described_class.create!(url: 'http://memcached.com', count: 2)
+      described_class.create!(url: 'http://amazon.com', count: 1)
+
+      link = described_class.top_ten
+      expect(link[0].url).to eq('http://reddit.com')
+    end
+  end
 end
